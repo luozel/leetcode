@@ -1,15 +1,8 @@
 public class SolutionTest {
     public static void main(String[] args) {
-        int[] a = {1,0,1,0,1};
-        Solution solution = new Solution();
-       
-        System.out.println( solution.minKBitFlips(a,2));
-        Solution1 solution1 = new Solution1();
-        solution1.minKBitFlips(a,2);
-    }
 }
 
-class Solution {
+class Solution9953 {
     public int minKBitFlips(int[] A, int K) {
         int n = A.length;
         int[] diff = new int[n + 1];
@@ -28,7 +21,7 @@ class Solution {
         return ans;
     }
 }
-class Solution1 {
+class Solution995 {
     public int minKBitFlips(int[] A, int K) {
         int size = A.length;
         int result = 0;
@@ -47,7 +40,7 @@ class Solution1 {
         return result;
     }
 }
-class Solution2{
+class Solution9952{
     public int minKBitFlips(int[] A, int K) {
         int size = A.length;
         int result = 0;
