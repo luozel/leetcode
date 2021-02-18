@@ -1,5 +1,6 @@
 public class SolutionTest {
     public static void main(String[] args) {
+    }
 }
 
 class Solution9953 {
