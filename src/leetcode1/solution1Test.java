@@ -1,18 +1,16 @@
 package leetcode1;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class solution1Test {
-    public static void main(String[] args) {
-        int[] ints = {1,3,5,6,7};
-        Solution2 solution2 = new Solution2();
-        System.out.println(solution2.twoSum(ints,8));
-    }
+
 }
 
 class Solution{
     public int[] twoSum(int[] nums, int target) {
-        for(int i = 0;i < nums.length;i++){
+        for(int i = 0;i < nums.length-1;i++){
             for(int j = i+1;j < nums.length;j++){
                 if(nums[i]+nums[j]==target){
                     return new int[]{i,j};
@@ -22,31 +20,35 @@ class Solution{
         return null;
     }
 }
- class Solution2 {
-    public int[] twoSum(int[] nums, int target) {
-        int[] indexs = new int[2];
 
-        // 建立k-v ，一一对应的哈希表
-        HashMap<Integer,Integer> hash = new HashMap<Integer,Integer>();
-        for(int i = 0; i < nums.length; i++){
-            if(hash.containsKey(nums[i])){
-                indexs[0] = i;
-                indexs[1] = hash.get(nums[i]);
-                return indexs;
+ class Solution2 {
+     public int[] twoSum(int[] nums, int target) {
+         HashMap<Integer,Integer> map = new HashMap<>();
+         for(int i = 0; i < nums.length; i++){
+             if(map.containsKey(nums[i])){
+                 return new int[]{map.get(nums[i]), i};
+             }
+             map.put(target - nums[i], i);
+         }
+         return null;
+     }
+}
+//参考代码
+class Solution3{
+    public int[] twoSum(int[] nums,int target) throws IllegalAccessException {
+        int len = nums.length;
+        Map<Integer,Integer> hashMap = new HashMap<>(len-1);
+        hashMap.put(nums[0],0);
+        for (int i=1;i<len;i++){
+            //结果为固定值target减去当前的num
+            int another = target-nums[i];
+            //当找到的时候 返回这个值
+            if(hashMap.containsKey(another)){
+                return new int[]{i,hashMap.get(another)};
             }
-            // 将数据存入 key为补数 ，value为下标
-            hash.put(target-nums[i],i);
+            //放入到hashmap中
+            hashMap.put(nums[i],i);
         }
-        // // 双重循环 循环极限为(n^2-n)/2 
-        // for(int i = 0; i < nums.length; i++){
-        //     for(int j = nums.length - 1; j > i; j --){
-        //         if(nums[i]+nums[j] == target){
-        //            indexs[0] = i;
-        //            indexs[1] = j; 
-        //            return indexs;
-        //         }
-        //     }
-        // }
-        return indexs;
+        throw new IllegalAccessException("sorry");
     }
 }
