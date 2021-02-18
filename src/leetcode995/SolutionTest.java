@@ -1,9 +1,11 @@
+package leetcode995;
+
 public class SolutionTest {
     public static void main(String[] args) {
     }
 }
 
-class Solution9953 {
+class Solution1 {
     public int minKBitFlips(int[] A, int K) {
         int n = A.length;
         int[] diff = new int[n + 1];
@@ -22,7 +24,7 @@ class Solution9953 {
         return ans;
     }
 }
-class Solution995 {
+class Solution2 {
     public int minKBitFlips(int[] A, int K) {
         int size = A.length;
         int result = 0;
@@ -41,7 +43,7 @@ class Solution995 {
         return result;
     }
 }
-class Solution9952{
+class Solution{
     public int minKBitFlips(int[] A, int K) {
         int size = A.length;
         int result = 0;
