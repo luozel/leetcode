@@ -24,6 +24,7 @@ class Solution1 {
         return ans;
     }
 }
+
 class Solution2 {
     public int minKBitFlips(int[] A, int K) {
         int size = A.length;
@@ -43,16 +44,16 @@ class Solution2 {
         return result;
     }
 }
-class Solution{
+
+class Solution {
     public int minKBitFlips(int[] A, int K) {
         int size = A.length;
         int result = 0;
         for (int i = 0; i < size; i++) {
             if (A[i] == 0) {
-                if(i+K>size){
+                if (i + K > size) {
                     return -1;
-                }
-                else{
+                } else {
                     for (int j = i; j < i + K; j++) {
                         A[j] ^= 1;
                     }
