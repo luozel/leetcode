@@ -97,11 +97,11 @@ class Solution2 {
     public int binarySearch(int[] P, int target) {
         int low = 0, high = P.length - 1;
         while (low < high) {
-            int mid = (high - low) / 2 + low;
-            if (P[mid] < target) {
-                low = mid + 1;
+            int i = (high - low) / 2 + low;
+            if (P[i] < target) {
+                low = i + 1;
             } else {
-                high = mid;
+                high = i;
             }
         }
         return low;

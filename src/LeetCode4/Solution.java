@@ -118,12 +118,12 @@ public class Solution {
         int length1 = nums1.length, length2 = nums2.length;
         int totalLength = length1 + length2;
         if (totalLength % 2 == 1) {
-            int midIndex = totalLength / 2;
-            double median = getKthElement(nums1, nums2, midIndex + 1);
+            int iIndex = totalLength / 2;
+            double median = getKthElement(nums1, nums2, iIndex + 1);
             return median;
         } else {
-            int midIndex1 = totalLength / 2 - 1, midIndex2 = totalLength / 2;
-            double median = (getKthElement(nums1, nums2, midIndex1 + 1) + getKthElement(nums1, nums2, midIndex2 + 1)) / 2.0;
+            int iIndex1 = totalLength / 2 - 1, iIndex2 = totalLength / 2;
+            double median = (getKthElement(nums1, nums2, iIndex1 + 1) + getKthElement(nums1, nums2, iIndex2 + 1)) / 2.0;
             return median;
         }
     }
