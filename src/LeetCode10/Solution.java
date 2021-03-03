@@ -1,6 +1,10 @@
 package LeetCode10;
 
 public class Solution {
+    public static void main(String[] args) {
+        Solution1 solution1 = new Solution1();
+        System.out.println(solution1.isMatch("mississippi", "mis*is*ip*."));
+    }
 }
 class Solution1 {
     public boolean isMatch(String s, String p) {
